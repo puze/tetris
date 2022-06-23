@@ -16,23 +16,19 @@ class GameSreen extends StatelessWidget {
   }
 
   Widget viewGameArea() {
-    return GetX<GameController>(
-      builder: (gameController) {
-        return GridView.builder(
-            itemCount: gameController.column * gameController.row,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 10, childAspectRatio: 1),
-            itemBuilder: _buildGirdItem);
-      },
-    );
+    return GridView.builder(
+        itemCount: GameController.column * GameController.row,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 10, childAspectRatio: 1),
+        itemBuilder: _buildGirdItem);
   }
 
   Widget _buildGirdItem(BuildContext context, int index) {
     return GetX<GameController>(
       builder: (gameController) {
         int gameAreaLength = gameController.gameArea.length;
-        int x = (index / gameAreaLength).floor();
-        int y = (index % gameAreaLength);
+        int x = (index % gameAreaLength);
+        int y = (index / gameAreaLength).floor();
         return block.resources[gameController.gameArea[x][y]]!;
       },
     );

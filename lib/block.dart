@@ -5,27 +5,20 @@ import 'package:tetris/block_type.dart';
 class Block {
   Map<BlockType, Widget> resources = Map.identity();
   Block() {
-    resources[BlockType.none] = Container(
-      color: Colors.grey,
-    );
-    resources[BlockType.i] = Container(
-      color: Colors.lightBlue,
-    );
-    resources[BlockType.o] = Container(
-      color: Colors.yellow,
-    );
-    resources[BlockType.t] = Container(
-      color: Colors.purple,
-    );
-    resources[BlockType.l] = Container(
-      color: Colors.orange,
-    );
-    resources[BlockType.j] = Container(color: Colors.blue);
-    resources[BlockType.s] = Container(
-      color: Colors.green,
-    );
-    resources[BlockType.z] = Container(
-      color: Colors.red,
+    resources[BlockType.none] = _item(Colors.grey);
+    resources[BlockType.i] = _item(Colors.lightBlue);
+    resources[BlockType.o] = _item(Colors.yellow);
+    resources[BlockType.t] = _item(Colors.purple);
+    resources[BlockType.l] = _item(Colors.orange);
+    resources[BlockType.j] = _item(Colors.blue);
+    resources[BlockType.s] = _item(Colors.green);
+    resources[BlockType.z] = _item(Colors.red);
+  }
+
+  Widget _item(Color color) {
+    return Container(
+      margin: const EdgeInsets.all(1),
+      color: color,
     );
   }
 }
