@@ -8,3 +8,8 @@ enum BlockType {
   s, // 초록색
   z // 빨간색
 }
+
+enum BlockState {
+  none,
+  active,
+}

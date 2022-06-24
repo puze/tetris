@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tetris/block_type.dart';
 
-class Block {
+class BlockWidget {
   Map<BlockType, Widget> resources = Map.identity();
-  Block() {
+  BlockWidget() {
     resources[BlockType.none] = _item(Colors.grey);
-    resources[BlockType.i] = _item(Colors.lightBlue);
+    resources[BlockType.i] = _item(Colors.lightBlue[100]!);
     resources[BlockType.o] = _item(Colors.yellow);
     resources[BlockType.t] = _item(Colors.purple);
     resources[BlockType.l] = _item(Colors.orange);
-    resources[BlockType.j] = _item(Colors.blue);
+    resources[BlockType.j] = _item(Colors.blue[700]!);
     resources[BlockType.s] = _item(Colors.green);
     resources[BlockType.z] = _item(Colors.red);
   }

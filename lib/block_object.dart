@@ -1,11 +1,23 @@
 import 'package:tetris/block_type.dart';
-import 'package:vector_math/vector_math.dart';
+import 'package:tetris/enum_class.dart';
+import 'package:tetris/position.dart';
 
 class BlockObject {
   BlockType blockType = BlockType.none;
-  Vector2 worldPosition = Vector2.zero();
+  Position worldPosition = Position.zero();
+  Position localPosition = Position.zero();
+  Direction direction = Direction.up;
+  late List<List<BlockType>> blockData;
+  int id;
 
-  static List<List<BlockType>>? getBlockObject(BlockType blockType) {
+  BlockObject(
+      {required this.id,
+      required this.blockType,
+      required this.worldPosition}) {
+    blockData = getBlockObject(blockType)!;
+  }
+
+  List<List<BlockType>>? getBlockObject(BlockType blockType) {
     switch (blockType) {
       case BlockType.none:
         return [
