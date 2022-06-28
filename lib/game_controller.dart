@@ -170,4 +170,25 @@ class GameController extends GetxController {
         break;
     }
   }
+
+  void rotationCurrentBlock(Direction direction) {
+    switch (direction) {
+      case Direction.left:
+        var data = currentBlock.blockData;
+        List<List<BlockType>> tempData = List<List<BlockType>>.empty();
+        for (int i = 0; i < data.length; i++) {
+          tempData.add(List<BlockType>.empty());
+          for (int j = 0; j < data[0].length; j++) {
+            
+          }
+        }
+        break;
+
+      case Direction.right:
+        break;
+
+      default:
+        break;
+    }
+  }
 }
